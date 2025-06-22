@@ -1,2 +1,2 @@
-# Tic-Tac-Toe-In-Python-Shell
+# Tic-Tac-Toe-Bot-In-Python-Shell
 A beginner project. Really messy.
