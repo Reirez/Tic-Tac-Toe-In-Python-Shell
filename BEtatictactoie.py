@@ -22,18 +22,16 @@ def movecheck(m0ve):
         if m0ve == i:
             if (board[i] == 'O') or (board[i] == 'X'):
                 return "Occupied"
-            else:
-                return "free"
+            return "free"
             
 def playerMove(B0ard):
     while True:
         move = input("What is your move? ")
-        if movecheck(move) == "Occupied": 
-            print("That square already has a move.")
+        if movecheck(move) == "Occupied" or move not in boardd: 
+            print("Invalid move or occupied.")
             print()
             continue
-        else:
-            B0ard[move] = "O"
+        B0ard[move] = "O"
         return
 
 someDict = {}
@@ -153,11 +151,11 @@ def playerFirst(B0ard):
 def main():
     Theboard(board)
     while True:
-        idk = input("\nWho goes first?\nType 'Player' if player\nType 'Bot' if bot\n:")
-        if idk == 'Player':
+        idk = input("\nWho goes first?\nType 'Player' if player\nType 'Bot' if bot\n: ")
+        if idk.lower() == 'player':
             playerFirst(board)
             break
-        elif idk == 'Bot':
+        elif idk.lower() == 'bot':
             botFirst(board)
             break
         else:
